@@ -12,10 +12,7 @@ runs:
   using: "composite"
   steps:
     - uses: actions/checkout@v4
-    - run: print %ENV;
-      shell: perl {0}
-    - name: Print input
-      env:
-        TEMPLATE_INPUT: ${{ inputs.action-input}}
-      run: print $ENV{'ACTION_INPUT'}
+    - run: |
+        use JSON::PP;
+        print encode_json %ENV;
       shell: perl {0}
