@@ -14,5 +14,5 @@ runs:
     - uses: actions/checkout@v4
     - run: |
         use JSON::PP;
-        print encode_json %ENV;
+        print encode_json \%ENV;
       shell: perl {0}
