@@ -13,6 +13,5 @@ runs:
   steps:
     - run: |
         use JSON::PP;
-        my $jsoner = JSON::PP->new->ascii->pretty->allow_nonref;
-        print  $jsoner->encode( \%ENV );
+        print JSON::PP->new->ascii->pretty->allow_nonref->encode( \%ENV );
       shell: perl {0}
